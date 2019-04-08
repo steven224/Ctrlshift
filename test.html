@@ -1,0 +1,114 @@
+<html>
+<meta charset="utf-8">
+<head>
+    <title>web server first try</title>
+    <script type="text/javascript">
+   
+    </script>
+</head>
+
+<style>
+form {
+  /* 居中表单 */
+  margin: 0 auto;
+  width: 400px;
+  /* 显示表单的轮廓 */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;  
+}
+
+input, textarea {
+  /* 确保所有文本输入框字体相同
+     textarea默认是等宽字体 */
+  font: 1em sans-serif;
+
+  /* 使所有文本输入框大小相同 */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* 调整文本输入框的边框样式 */
+  border: 1px solid #999;
+}
+
+label {
+  /* 确保所有label大小相同并正确对齐 */
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+textarea {
+  /* 使多行文本输入框和它们的label正确对齐 */
+  vertical-align: top;
+
+  /* 给文本留下足够的空间 */
+  height: 5em;
+}
+.button {
+  /* 把按钮放到和文本输入框一样的位置 */
+  padding-left: 90px; /* 和label的大小一样 */
+}
+
+button {
+  /* 这个外边距的大小与label和文本输入框之间的间距差不多 */
+  margin-left: .5em;
+}
+
+</style>
+
+<body>
+    <form action="/impressions" method="post" id="formid" >
+    <div>
+        <label for="total_spend_cpm">total_spend_cpm:</label>
+        <input type="number" step="0.01" value='total_spend_cpm' name="total_spend_cpm" id="total_spend_cpm" align="center" style="height: 20px; width: 400px; font-size: 19px">
+        <br>
+        <label for="D2FD">D2FD:</label>
+        <input type="number" step="1" value='D2FD' name="D2FD" id="D2FD" align="center" style="height: 20px; width: 400px; font-size: 19px">
+        <br>
+        <label for="Goal_type">Goal_type:</label>
+        <select name='Goal_type'>
+            <option>--please select--</option>
+            <option value="type1">type1</option>
+            <option value="type2">type2</option>
+            <option value="type3">type3</option>
+        </select>
+        <br>
+        <label for="Country">Country:</label>
+        <select name='Country'>
+            <option>--please select--</option>option>
+            <option value="Australia">Australia</option>
+            <option value="Hong Kong">Hong Kong</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Somalia">Somalia</option>
+            <option value="reserved/private">reserved/private</option>
+        </select>
+        <br>
+        <label for="Date">Date:</label>
+        <input type="date" name="Date" />
+        <br>
+        <label for="Channel">Channel:</label>
+        <select name='Channel'>
+            <option>--please select--</option>
+            <option value="Display">Display</option>
+            <option value="Mobile">Mobile</option>
+            <option value="channelunknown">channelunknown</option>
+        </select>
+        <br>
+        <label for="BV">Business_vertical:</label>
+        <select name='Business_vertical'>
+            <option>--please select--</option>
+            <option value="Finance">Finance</option>
+            <option value="bvunknown">bvunknown</option>
+        </select>
+    <input type="submit" name="btn1" value="submit" align="center">
+    <br>
+    </form>
+    Predicted Impressions: {{result}} 
+    <br>
+    Predicted Clicks: {{click_result}} 
+    </body>
+    
+</html>
